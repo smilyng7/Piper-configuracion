@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tenedor y Plata</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+
+
+  <script>
+
+
+function simularPedido(){
+
+let nombre = document.getElementById("nombre").value;
+let mesa = document.getElementById("mesa").value;
+
+let select = document.getElementById("producto");
+
+let producto = select.options[select.selectedIndex].text;
+let precio = parseFloat(select.value);
+
+let cantidad = parseInt(document.getElementById("cantidad").value);
+
+if(nombre=="" || mesa=="" || select.value=="" || cantidad<=0){
+
+    alert("Complete todos los campos");
+    return;
+
+}
+
+let subtotal = cantidad * precio;
+
+
+let porcentajeDescuento = 0;
+
+if(subtotal >= 200){
+    porcentajeDescuento = 5;
+}
+
+let montoDescuento = subtotal * (porcentajeDescuento/100);
+
+let base = subtotal - montoDescuento;
+
+
+let montoIGV = base * 0.18;
+
+let total = base + montoIGV;
+
+
+
+document.getElementById("cliente").innerHTML = nombre;
+document.getElementById("numMesa").innerHTML = mesa;
+document.getElementById("productoR").innerHTML = producto;
+document.getElementById("cantidadR").innerHTML = cantidad;
+document.getElementById("precioR").innerHTML = "S/ " + precio.toFixed(2);
+document.getElementById("subtotal").innerHTML = "S/ " + subtotal.toFixed(2);
+document.getElementById("descuentoTotal").innerHTML = porcentajeDescuento + "% (S/ " + montoDescuento.toFixed(2) + ")";
+document.getElementById("igvTotal").innerHTML = "S/ " + montoIGV.toFixed(2);
+document.getElementById("total").innerHTML = "S/ " + total.toFixed(2);
+
+}
+
+</script>
+
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img src="../IMAGENES/LOGO.jpg" alt="Logo Tenedor y Plata" />
+        <div>
+          <h2>TENEDOR Y PLATA</h2>
+          <span>La sazón de Orfe</span>
+        </div>
+      </div>
+      
+
+<input type="checkbox" id="menu-toggle">
+
+<label for="menu-toggle" class="menu-icon">
+☰
+</label>
+
+
+<nav class="navbar">
+
+<div class="menu-title">
+INICIO
+</div>
+
+<a href="../MENU/index.html">
+<i class="fa-solid fa-utensils"></i>
+MENU
+</a>
+
+<a href="../SERVICIOS/index.html">
+<i class="fa-solid fa-bell-concierge"></i>
+SERVICIOS
+</a>
+
+<a href="../PROMOCIONES/index.html">
+<i class="fa-solid fa-tags"></i>
+PROMOCIONES
+</a>
+
+<a href="../CARTA/index.html">
+<i class="fa-solid fa-book-open"></i>
+CARTA
+</a>
+
+<a href="../RESERVAS/index.html">
+<i class="fa-solid fa-calendar-days"></i>
+RESERVAS
+</a>
+
+<a href="../NOTICIAS/index.html">
+<i class="fa-solid fa-newspaper"></i>
+NOTICIAS
+</a>
+
+<a href="../CONTACTANOS/index.html">
+<i class="fa-solid fa-envelope"></i>
+CONTACTO
+</a>
+
+<a href="../REGISTRATE/index.html">
+<i class="fa-solid fa-user"></i>
+REGISTRATE
+</a>
+
+</nav>
+
+      <a href="#" class="btn-registro">
+        <i class="fa-regular fa-user"></i> REGISTRATE
+      </a>
+    </header>
+
+    <section id="simulador" class="simulador">
+
+    <div class="simulador-box">
+
+<div class="formulario">
+
+    <h2>🍽️ SIMULADOR DE PEDIDO</h2>
+
+    <div class="form-grid">
+
+        <div class="campo">
+            <label>Nombre del cliente</label>
+            <input type="text" id="nombre" placeholder="Ingrese nombre">
+        </div>
+
+        <div class="campo">
+            <label>Número de mesa</label>
+            <input type="number" id="mesa" placeholder="Ej. 5">
+        </div>
+
+        <div class="campo">
+    <label>Seleccione un plato</label>
+
+    <select id="producto">
+
+        <option value="">-- Seleccione un plato --</option>
+
+        <option value="45">Lomo Saltado</option>
+        <option value="38">Ají de Gallina</option>
+        <option value="48">Arroz con Mariscos</option>
+        <option value="52">Ceviche Clásico</option>
+        <option value="40">Chaufa Especial</option>
+        <option value="36">Pollo a la Brasa</option>
+        <option value="46">Tacu Tacu con Lomo</option>
+        <option value="42">Seco de Res</option>
+        <option value="55">Parihuela</option>
+        <option value="35">Arroz con Pollo</option>
+        <option value="39">Tallarines Verdes con Bistec</option>
+        <option value="28">Causa Limeña</option>
+
+    </select>
+</div>
+
+        <div class="campo">
+            <label>Cantidad</label>
+            <input type="number" id="cantidad" placeholder="0">
+        </div>
+
+        
+
+    </div>
+
+    <button class="btn-calcular" onclick="simularPedido()">
+        <i class="fa-solid fa-calculator"></i>
+        CALCULAR PEDIDO
+    </button>
+
+
+</div>
+
+        <div class="resultado">
+
+    <h2>REPORTE DEL PEDIDO</h2>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Concepto</th>
+                <th>Resultado</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td>Cliente</td>
+                <td id="cliente"></td>
+            </tr>
+
+            <tr>
+                <td>Mesa</td>
+                <td id="numMesa"></td>
+            </tr>
+
+            <tr>
+                <td>Producto</td>
+                <td id="productoR"></td>
+            </tr>
+
+            <tr>
+                <td>Cantidad</td>
+                <td id="cantidadR"></td>
+            </tr>
+
+            <tr>
+                <td>Precio Unitario</td>
+                <td id="precioR"></td>
+            </tr>
+
+            <tr>
+                <td>Subtotal</td>
+                <td id="subtotal"></td>
+            </tr>
+
+            <tr>
+                <td>Descuento</td>
+                <td id="descuentoTotal"></td>
+            </tr>
+
+            <tr>
+                <td>IGV</td>
+                <td id="igvTotal"></td>
+            </tr>
+
+            <tr>
+                <td><strong>TOTAL A PAGAR</strong></td>
+                <td id="total"><strong></strong></td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+</div>
+    </div>
+</section>
+
+
+</div>
+    </section>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-box">
+          <i class="fa-solid fa-location-dot"></i>
+          <p>
+            Av. Los Sabores 123, Lima - Perú
+            <br />
+            Frente al mar, Miraflores
+          </p>
+        </div>
+
+        <div class="footer-box">
+          <i class="fa-solid fa-phone"></i>
+          <p>
+            +51 956 266 206
+            <br />
+            +51 928 068 406
+          </p>
+        </div>
+
+        <div class="footer-box">
+          <i class="fa-regular fa-envelope"></i>
+          <p>
+            info@tenedoryplata.com
+            <br />
+            contacto@tenedoryplata.com
+          </p>
+        </div>
+
+        <div class="footer-box">
+          <i class="fa-regular fa-clock"></i>
+          <p>
+            Lun - Dom: 11:00 a.m. - 11:00 p.m.
+            <br />
+            Atención todos los días
+          </p>
+        </div>
+      </div>
+
+      <div class="social">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-tiktok"></i>
+      </div>
+
+      
+      <p class="copy">
+        © 2026 Tenedor y Plata - Todos los derechos reservados.
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenedor y Plata</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo"> <img src="../IMAGENES/LOGO.jpg" alt="Logo Tenedor y Plata">
+            <div>
+                <h2>TENEDOR Y PLATA</h2> <span>La sazón de Orfe</span>
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="menu-icon">
+☰
+</label>
+
+<nav class="navbar">
+
+<div class="menu-title">
+INICIO
+</div>
+
+<a href="../MENU/index.html">
+<i class="fa-solid fa-utensils"></i>
+MENU
+</a>
+
+<a href="../SERVICIOS/index.html">
+<i class="fa-solid fa-bell-concierge"></i>
+SERVICIOS
+</a>
+
+<a href="../PROMOCIONES/index.html">
+<i class="fa-solid fa-tags"></i>
+PROMOCIONES
+</a>
+
+<a href="../CARTA/index.html">
+<i class="fa-solid fa-book-open"></i>
+CARTA
+</a>
+
+<a href="../RESERVAS/index.html">
+<i class="fa-solid fa-calendar-days"></i>
+RESERVAS
+</a>
+
+<a href="../NOTICIAS/index.html">
+<i class="fa-solid fa-newspaper"></i>
+NOTICIAS
+</a>
+
+<a href="../CONTACTANOS/index.html">
+<i class="fa-solid fa-envelope"></i>
+CONTACTO
+</a>
+
+<a href="../REGISTRATE/index.html">
+<i class="fa-solid fa-user"></i>
+REGISTRATE
+</a>
+
+</nav>
+        </a>
+    </header>
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-texto">
+            <h2>ÚLTIMAS</h2>
+            <h1>Novedades</h1>
+            <p> Mantente informado sobre nuestros eventos, promociones y novedades. </p>
+        </div>
+    </section>
+    <section class="tabla-restaurante">
+        <h2 class="titulo-tabla"> Nuestro Menú Especial </h2>
+        <div class="tabla-contenedor">
+            <table class="tabla-menu">
+                <thead>
+                    <tr>
+                        <th>Plato</th>
+                        <th>Categoría</th>
+                        <th>Precio</th>
+                        <th>Estado</th>
+                        <th>Ordenar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Lomo Saltado</td>
+                        <td>Criollo</td>
+                        <td>S/ 35</td>
+                        <td> <span class="estado disponible"> Disponible </span> </td>
+                        <td> <button class="btn-pedir"> Pedir </button> </td>
+                    </tr>
+                    <tr>
+                        <td>Ceviche Mixto</td>
+                        <td>Mariscos</td>
+                        <td>S/ 42</td>
+                        <td> <span class="estado disponible"> Disponible </span> </td>
+                        <td> <button class="btn-pedir"> Pedir </button> </td>
+                    </tr>
+                    <tr>
+                        <td>Arroz Chaufa</td>
+                        <td>Oriental</td>
+                        <td>S/ 28</td>
+                        <td> <span class="estado agotado"> Agotado </span> </td>
+                        <td> <button class="btn-pedir disabled"> Sin Stock </button> </td>
+                    </tr>
+                    <tr>
+                        <td>Parrilla Especial</td>
+                        <td>Carnes</td>
+                        <td>S/ 55</td>
+                        <td> <span class="estado disponible"> Disponible </span> </td>
+                        <td> <button class="btn-pedir"> Pedir </button> </td>
+                    </tr>
+                    <tr>
+                        <td>Tallarines Verdes</td>
+                        <td>Pastas</td>
+                        <td>S/ 30</td>
+                        <td> <span class="estado disponible"> Disponible </span> </td>
+                        <td> <button class="btn-pedir"> Pedir </button> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section class="noticias">
+        <h2>NOVEDADES DEL RESTAURANTE</h2>
+        <div class="contenedor-noticias">
+            <div class="card"> <img src="../IMAGENES/noticia1.png.png" alt="">
+                <div class="contenido">
+                    <h3>Nueva Carta Gourmet</h3>
+                    <p> Presentamos nuevos platos exclusivos preparados por nuestro chef. </p> <a href="#">Leer más</a>
+                </div>
+            </div>
+            <div class="card"> <img src="../IMAGENES/noticia2.png.png" alt="">
+                <div class="contenido">
+                    <h3>Noche Criolla</h3>
+                    <p> Disfruta música en vivo y comida peruana tradicional. </p> <a href="#">Leer más</a>
+                </div>
+            </div>
+            <div class="card"> <img src="../IMAGENES/noticia3.png.png" alt="">
+                <div class="contenido">
+                    <h3>Promoción Especial</h3>
+                    <p> Descuentos exclusivos durante todo el fin de semana. </p> <a href="#">Leer más</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="beneficios">
+        <div class="beneficio">
+            <h3>Eventos Exclusivos</h3>
+            <p> Vive experiencias únicas en nuestro restaurante. </p>
+        </div>
+        <div class="beneficio">
+            <h3>Ambiente Premium</h3>
+            <p> Elegancia y comodidad en cada visita. </p>
+        </div>
+        <div class="beneficio">
+            <h3>Experiencia Gourmet</h3>
+            <p> Disfruta sabores auténticos y memorables. </p>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box"> <i class="fa-solid fa-location-dot"></i>
+                <p> Av. Los Sabores 123, Lima - Perú <br> Frente al mar, Miraflores </p>
+            </div>
+            <div class="footer-box"> <i class="fa-solid fa-phone"></i>
+                <p> +51 956 266 206 <br> +51 928 068 406 </p>
+            </div>
+            <div class="footer-box"> <i class="fa-regular fa-envelope"></i>
+                <p> info@tenedoryplata.com <br> contacto@tenedoryplata.com </p>
+            </div>
+            <div class="footer-box"> <i class="fa-regular fa-clock"></i>
+                <p> Lun - Dom: 11:00 a.m. - 11:00 p.m. <br> Atención todos los días </p>
+            </div>
+        </div>
+        <div class="social"> <i class="fa-brands fa-facebook-f"></i> <i class="fa-brands fa-instagram"></i> <i
+                class="fa-brands fa-tiktok"></i> </div>
+        <p class="copy"> © 2026 Tenedor y Plata - Todos los derechos reservados. </p>
+    </footer>
+</body>
+
+</html>

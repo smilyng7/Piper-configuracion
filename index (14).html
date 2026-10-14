@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tenedor y Plata</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="estilos.css"/>
+  </head>
+  <script>
+
+</script>
+  <body>
+    <header class="header">
+      <div class="logo">
+        <img src="../IMAGENES/LOGO.jpg" alt="Logo Tenedor y Plata" />
+        <div>
+          <h2>TENEDOR Y PLATA</h2>
+          <span>La sazón de Orfe</span>
+        </div>
+      </div>
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="menu-icon">
+☰
+</label>
+
+    <nav class="navbar">
+
+<div class="menu-title">
+INICIO
+</div>
+
+<a href="../MENU/index.html">
+<i class="fa-solid fa-utensils"></i>
+MENU
+</a>
+
+<a href="../SERVICIOS/index.html">
+<i class="fa-solid fa-bell-concierge"></i>
+SERVICIOS
+</a>
+
+<a href="../PROMOCIONES/index.html">
+<i class="fa-solid fa-tags"></i>
+PROMOCIONES
+</a>
+
+<a href="../CARTA/index.html">
+<i class="fa-solid fa-book-open"></i>
+CARTA
+</a>
+
+<a href="../RESERVAS/index.html">
+<i class="fa-solid fa-calendar-days"></i>
+RESERVAS
+</a>
+
+<a href="../NOTICIAS/index.html">
+<i class="fa-solid fa-newspaper"></i>
+NOTICIAS
+</a>
+
+<a href="../CONTACTANOS/index.html">
+<i class="fa-solid fa-envelope"></i>
+CONTACTO
+</a>
+
+<a href="../REGISTRATE/index.html">
+<i class="fa-solid fa-user"></i>
+REGISTRATE
+</a>
+
+</nav>
+
+      <a href="#" class="btn-registro">
+        <i class="fa-regular fa-user"></i> REGISTRATE
+      </a>
+    </header>
+
+    <section class="servicios">
+      <h1>Nuestros Servicios</h1>
+      <p class="subtitulo">
+        Disfruta una experiencia culinaria única donde cada plato está preparado
+        con ingredientes frescos, técnicas tradicionales y un toque moderno.
+        Vive el sabor, la presentación y el ambiente perfecto para una comida
+        inolvidable.
+      </p>
+
+      <div class="contenedor-servicios">
+        <div class="card-servicio" onclick="mostrarServicio('Experiencia Gastronómica')">
+          <i class="fa-solid fa-utensils"></i>
+          <h3>Experiencia Gastronómica</h3>
+          <p>
+            Disfruta una experiencia culinaria única donde cada plato está
+            preparado con ingredientes frescos, técnicas tradicionales y un
+            toque moderno. Vive el sabor, la presentación y el ambiente perfecto
+            para una comida inolvidable.
+          </p>
+        </div>
+
+        <div class="card-servicio" onclick="mostrarServicio('Delivery Rápido')">
+          <i class="fa-solid fa-truck"></i>
+          <h3>Delivery Rápido</h3>
+          <p>
+            Llevamos tus platos favoritos directamente a tu puerta con rapidez y
+            seguridad. Nuestro servicio de delivery garantiza que tu comida
+            llegue caliente, fresca y en el menor tiempo posible, sin perder
+            calidad ni sabor.
+          </p>
+        </div>
+
+        <div class="card-servicio" onclick="mostrarServicio('Eventos Especiales')">
+          <i class="fa-solid fa-champagne-glasses"></i>
+          <h3>Eventos Especiales</h3>
+          <p>
+            Celebra tus momentos importantes con nosotros. Organizamos
+            cumpleaños, cenas corporativas y celebraciones especiales con menús
+            personalizados, atención exclusiva y un ambiente elegante que hará
+            tu evento inolvidable.
+          </p>
+        </div>
+
+        <div class="card-servicio" onclick="mostrarServicio('Reservas Online')">
+          <i class="fa-solid fa-calendar-check"></i>
+          <h3>Reservas Online</h3>
+          <p>
+            Reserva tu mesa de forma rápida y sencilla desde cualquier
+            dispositivo. Evita esperas y asegura tu lugar para disfrutar de una
+            experiencia gastronómica cómoda, eficiente y totalmente
+            personalizada.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-box">
+          <i class="fa-solid fa-location-dot"></i>
+          <p>
+            Av. Los Sabores 123, Lima - Perú
+            <br />
+            Frente al mar, Miraflores
+          </p>
+        </div>
+
+        <div class="footer-box">
+          <i class="fa-solid fa-phone"></i>
+          <p>
+            +51 956 266 206
+            <br />
+            +51 928 068 406
+          </p>
+        </div>
+
+        <div class="footer-box">
+          <i class="fa-regular fa-envelope"></i>
+          <p>
+            info@tenedoryplata.com
+            <br />
+            contacto@tenedoryplata.com
+          </p>
+        </div>
+
+        <div class="footer-box">
+          <i class="fa-regular fa-clock"></i>
+          <p>
+            Lun - Dom: 11:00 a.m. - 11:00 p.m.
+            <br />
+            Atención todos los días
+          </p>
+        </div>
+      </div>
+
+      <div class="social">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-tiktok"></i>
+      </div>
+
+      <p class="copy">
+        © 2026 Tenedor y Plata - Todos los derechos reservados.
+      </p>
+    </footer>
+
+    <!-- MODAL -->
+
+<div id="modal" class="modal">
+
+<div class="modal-box">
+
+<h2 id="tituloModal"></h2>
+
+<p>
+Gracias por elegir Tenedor y Plata.
+Disfruta nuestra atención personalizada.
+</p>
+
+<button onclick="cerrarModal()">
+Cerrar
+</button>
+
+</div>
+
+</div>
+
+
+
+<script>
+
+
+
+function mostrarServicio(nombre){
+
+document.getElementById("tituloModal").innerHTML = nombre;
+
+
+document.getElementById("modal").style.display="flex";
+
+
+}
+
+
+
+function cerrarModal(){
+
+document.getElementById("modal").style.display="none";
+
+}
+
+
+
+function cambioMenu(){
+
+console.log("Menu hamburguesa cambiado");
+
+}
+
+
+
+let tarjetas = document.querySelectorAll(".card-servicio");
+
+
+tarjetas.forEach(function(tarjeta){
+
+
+tarjeta.onmouseover=function(){
+
+this.style.transform="translateY(-15px) scale(1.05)";
+
+}
+
+
+
+tarjeta.onmouseout=function(){
+
+this.style.transform="translateY(0)";
+
+}
+
+
+});
+
+
+
+</script>
+  </body>
+</html>

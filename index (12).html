@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tenedor y Plata</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+  <header class="header">
+
+    <div class="logo">
+
+      <img src="../IMAGENES/LOGO.jpg" alt="Logo">
+
+      <div>
+
+        <h2>TENEDOR Y PLATA</h2>
+
+        <span>La sazón de Orfe</span>
+
+      </div>
+
+    </div>
+
+    <input type="checkbox" id="menu-toggle">
+
+    <label for="menu-toggle" class="menu-icon">
+
+      ☰
+
+    </label>
+
+    <nav class="navbar">
+
+      <div class="menu-title">
+
+        INICIO
+
+      </div>
+
+      <a href="../MENU/index.html"><i class="fa-solid fa-utensils"></i> MENU</a>
+
+      <a href="../SERVICIOS/index.html"><i class="fa-solid fa-bell-concierge"></i> SERVICIOS</a>
+
+      <a href="../PROMOCIONES/index.html"><i class="fa-solid fa-tags"></i> PROMOCIONES</a>
+
+      <a href="../CARTA/index.html"><i class="fa-solid fa-book-open"></i> CARTA</a>
+
+      <a href="../RESERVAS/index.html"><i class="fa-solid fa-calendar-days"></i> RESERVAS</a>
+
+      <a href="../NOTICIAS/index.html"><i class="fa-solid fa-newspaper"></i> NOTICIAS</a>
+
+      <a href="../CONTACTANOS/index.html"><i class="fa-solid fa-envelope"></i> CONTACTO</a>
+
+      <a href="../REGISTRATE/index.html"><i class="fa-solid fa-user"></i> REGÍSTRATE</a>
+
+    </nav>
+
+  </header>
+
+  <section class="hero">
+
+    <div class="overlay"></div>
+
+    <div class="hero-texto">
+
+      <h2>RESERVA TU</h2>
+
+      <h1>Mesa Ahora</h1>
+
+      <p>Vive una experiencia gastronómica inolvidable.</p>
+
+    </div>
+
+  </section>
+
+  <section class="reserva">
+
+    <div class="contenedor-reserva">
+
+      <div class="texto">
+
+        <h2>Haz tu Reserva</h2>
+
+        <p>
+
+          Reserva tu mesa fácilmente y disfruta de los mejores sabores peruanos.
+
+        </p>
+
+        <img src="../IMAGENES/reserva-img.png.png" alt="">
+
+      </div>
+
+      <form class="formulario" onsubmit="reservarMesa(event)">
+
+        <label>Nombre Completo</label>
+
+        <input type="text" id="nombre" placeholder="Ingrese su nombre">
+
+        <label>Correo Electrónico</label>
+
+        <input type="email" id="correo" placeholder="Ingrese su correo">
+
+        <label>Fecha</label>
+
+        <input type="date" id="fecha" onchange="validarFecha()">
+
+        <label>Hora</label>
+
+        <input type="time" id="hora">
+
+        <label>Número de Personas</label>
+
+        <input type="number" id="personas" min="1" placeholder="Ejemplo: 4">
+
+        <label>Mensaje</label>
+
+        <textarea id="mensaje" placeholder="Escriba un mensaje"></textarea>
+
+        <button type="submit" id="btnReservar" onmouseover="cambiarTextoBoton()" onmouseout="restaurarTextoBoton()">
+
+          RESERVAR
+
+        </button>
+
+        <div id="resultado"></div>
+
+      </form>
+
+    </div>
+
+    <div class="lista-reservas">
+
+      <h2>Reservas Registradas</h2>
+
+      <table id="tablaReservas">
+
+        <thead>
+
+          <tr>
+
+            <th>Nombre</th>
+
+            <th>Correo</th>
+
+            <th>Fecha</th>
+
+            <th>Hora</th>
+
+            <th>Personas</th>
+
+            <th>Acción</th>
+
+          </tr>
+
+        </thead>
+
+        <tbody id="cuerpoTabla">
+
+        </tbody>
+
+      </table>
+
+      <p id="contadorReservas"></p>
+
+    </div>
+
+  </section>
+
+  <section class="beneficios">
+
+    <div class="beneficio">
+
+      <h3>Ambiente Exclusivo</h3>
+
+      <p>Espacios elegantes y cómodos para ti.</p>
+
+    </div>
+
+    <div class="beneficio">
+
+      <h3>Atención Premium</h3>
+
+      <p>Personal capacitado para brindarte lo mejor.</p>
+
+    </div>
+
+    <div class="beneficio">
+
+      <h3>Reserva Rápida</h3>
+
+      <p>Sistema sencillo y práctico para reservar.</p>
+
+    </div>
+
+  </section>
+
+  <footer class="footer">
+
+    <div class="footer-container">
+
+      <div class="footer-box">
+
+        <i class="fa-solid fa-location-dot"></i>
+
+        <p>
+
+          Av. Los Sabores 123, Lima - Perú
+
+          <br>
+
+          Frente al mar, Miraflores
+
+        </p>
+
+      </div>
+
+      <div class="footer-box">
+
+        <i class="fa-solid fa-phone"></i>
+
+        <p>
+
+          +51 956 266 206
+
+          <br>
+
+          +51 928 068 406
+
+        </p>
+
+      </div>
+
+      <div class="footer-box">
+
+        <i class="fa-regular fa-envelope"></i>
+
+        <p>
+
+          info@tenedoryplata.com
+
+          <br>
+
+          contacto@tenedoryplata.com
+
+        </p>
+
+      </div>
+
+      <div class="footer-box">
+
+        <i class="fa-regular fa-clock"></i>
+
+        <p>
+
+          Lun - Dom: 11:00 a.m. - 11:00 p.m.
+
+          <br>
+
+          Atención todos los días
+
+        </p>
+
+      </div>
+
+    </div>
+
+    <div class="social">
+
+      <i class="fa-brands fa-facebook-f"></i>
+
+      <i class="fa-brands fa-instagram"></i>
+
+      <i class="fa-brands fa-tiktok"></i>
+
+    </div>
+
+    <p class="copy">
+
+      © 2026 Tenedor y Plata - Todos los derechos reservados.
+
+    </p>
+
+  </footer>
+
+  <div id="miModal" class="modal">
+
+    <div class="modal-content">
+
+      <h3>Reserva Confirmada</h3>
+
+      <p>Su reserva ha sido registrada correctamente.</p>
+
+      <button onclick="cerrarModal()">
+
+        Aceptar
+
+      </button>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    let reservas = [];
+
+    window.onload = function () {
+
+      cargarDesdeStorage();
+
+      mostrarReservas();
+
+    };
+
+    function guardarEnStorage() {
+
+      localStorage.setItem("reservas", JSON.stringify(reservas));
+
+    }
+
+    function cargarDesdeStorage() {
+
+      let datos = localStorage.getItem("reservas");
+
+      if (datos != null) {
+
+        reservas = JSON.parse(datos);
+
+      }
+
+    }
+
+    function reservarMesa(event) {
+
+      event.preventDefault();
+
+      let nombre = document.getElementById("nombre").value.trim();
+
+      let correo = document.getElementById("correo").value.trim();
+
+      let fecha = document.getElementById("fecha").value;
+
+      let hora = document.getElementById("hora").value;
+
+      let personas = document.getElementById("personas").value;
+
+      let mensaje = document.getElementById("mensaje").value.trim();
+
+      if (nombre == "" || correo == "" || fecha == "" || hora == "" || personas == "") {
+
+        alert("Complete todos los campos.");
+
+        return;
+
+      }
+
+      const expresion = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+      if (!expresion.test(correo)) {
+
+        alert("Ingrese un correo válido.");
+
+        return;
+
+      }
+
+      let reserva = {
+
+        nombre,
+
+        correo,
+
+        fecha,
+
+        hora,
+
+        personas,
+
+        mensaje
+
+      };
+
+      reservas.push(reserva);
+
+      guardarEnStorage();
+
+      mostrarReservas();
+
+      document.querySelector("form").reset();
+
+      abrirModal();
+
+    }
+
+    function mostrarReservas() {
+
+      let cuerpoTabla = document.getElementById("cuerpoTabla");
+
+      let contador = document.getElementById("contadorReservas");
+
+      cuerpoTabla.innerHTML = "";
+
+      for (let i = 0; i < reservas.length; i++) {
+
+        cuerpoTabla.innerHTML += `
+
+        <tr>
+
+            <td>${reservas[i].nombre}</td>
+
+            <td>${reservas[i].correo}</td>
+
+            <td>${reservas[i].fecha}</td>
+
+            <td>${reservas[i].hora}</td>
+
+            <td>${reservas[i].personas}</td>
+
+            <td>
+
+                <button class="btnEliminar" onclick="eliminarReserva(${i})">
+
+                    Eliminar
+
+                </button>
+
+            </td>
+
+        </tr>
+
+        `;
+
+      }
+
+      contador.innerHTML = "<strong>Total de reservas: </strong>" + reservas.length;
+
+    }
+
+    function eliminarReserva(indice) {
+
+      if (confirm("¿Desea eliminar esta reserva?")) {
+
+        reservas.splice(indice, 1);
+
+        guardarEnStorage();
+
+        mostrarReservas();
+
+      }
+
+    }
+
+    function validarFecha() {
+
+      let fecha = document.getElementById("fecha").value;
+
+      let hoy = new Date().toISOString().split("T")[0];
+
+      if (fecha < hoy) {
+
+        alert("No puede seleccionar una fecha anterior a la actual.");
+
+        document.getElementById("fecha").value = "";
+
+      }
+
+    }
+
+    function cambiarTextoBoton() {
+
+      document.getElementById("btnReservar").innerHTML = "🍽 Confirmar Reserva";
+
+    }
+
+    function restaurarTextoBoton() {
+
+      document.getElementById("btnReservar").innerHTML = "RESERVAR";
+
+    }
+
+    function abrirModal() {
+
+      document.getElementById("miModal").style.display = "flex";
+
+    }
+
+    function cerrarModal() {
+
+      document.getElementById("miModal").style.display = "none";
+
+    }
+
+  </script>
+
+</body>
+
+</html>

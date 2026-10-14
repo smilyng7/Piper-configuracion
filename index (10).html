@@ -1,0 +1,743 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title>Tenedor y Plata</title>
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+  <link rel="stylesheet" href="estilos.css">
+
+
+</head>
+
+
+<body>
+
+
+  <header class="header">
+
+
+    <div class="logo">
+
+
+      <img src="../IMAGENES/LOGO.jpg" alt="Logo Tenedor y Plata">
+
+
+
+      <div>
+
+        <h2>TENEDOR Y PLATA</h2>
+
+        <span>
+          La sazón de Orfe
+        </span>
+
+
+      </div>
+
+
+    </div>
+
+    <input type="checkbox" id="menu-toggle">
+
+    <label for="menu-toggle" class="menu-icon">
+
+      ☰
+
+    </label>
+
+    <nav class="navbar">
+
+      <a href="../MENU/index.html">
+
+        <i class="fa-solid fa-utensils"></i>
+
+        MENU
+
+      </a>
+
+      <a href="../SERVICIOS/index.html">
+
+        <i class="fa-solid fa-bell-concierge"></i>
+
+        SERVICIOS
+
+      </a>
+
+      <a href="../PROMOCIONES/index.html">
+
+        <i class="fa-solid fa-tags"></i>
+
+        PROMOCIONES
+
+      </a>
+
+
+      <a href="../CARTA/index.html">
+
+        <i class="fa-solid fa-book-open"></i>
+
+        CARTA
+
+      </a>
+
+      <a href="../RESERVAS/index.html">
+
+        <i class="fa-solid fa-calendar-days"></i>
+
+        RESERVAS
+
+      </a>
+
+
+      <a href="../NOTICIAS/index.html">
+
+        <i class="fa-solid fa-newspaper"></i>
+
+        NOTICIAS
+
+      </a>
+
+      <a href="../CONTACTANOS/index.html">
+
+        <i class="fa-solid fa-envelope"></i>
+
+        CONTACTO
+
+      </a>
+
+      <a href="../REGISTRATE/index.html">
+
+        <i class="fa-solid fa-user"></i>
+
+        REGISTRATE
+
+      </a>
+
+
+
+    </nav>
+    <a href="#" class="btn-registro">
+
+      <i class="fa-regular fa-user"></i>
+
+      REGISTRATE
+
+    </a>
+
+
+
+  </header>
+  <section class="hero">
+
+
+    <div class="overlay"></div>
+
+
+
+    <div class="hero-texto">
+
+
+
+      <h2>
+        ÚNETE A
+      </h2>
+
+
+
+      <h1>
+        Nuestra Familia
+      </h1>
+
+
+
+      <p>
+        Regístrate y disfruta promociones exclusivas.
+      </p>
+
+
+
+    </div>
+
+
+
+  </section>
+  <section class="registro">
+
+
+    <div class="contenedor-registro">
+
+
+
+      <div class="info">
+
+
+        <h2>
+          Bienvenido
+        </h2>
+
+
+
+        <p>
+
+          Forma parte de Tenedor y Plata y recibe beneficios especiales,
+          promociones y novedades.
+
+        </p>
+
+
+
+        <img src="../IMAGENES/registrate.png.png" alt="Registro">
+
+
+
+      </div>
+
+      <form class="formulario" onsubmit="registrar(event)">
+
+
+
+        <h2>
+          Crear Cuenta
+        </h2>
+
+
+
+
+        <label>
+          Nombre Completo
+        </label>
+
+
+        <input type="text" id="nombre" placeholder="Ingrese su nombre">
+
+
+
+
+
+        <label>
+          Correo Electrónico
+        </label>
+
+
+        <input type="email" id="correo" placeholder="Ingrese su correo">
+
+        <label>
+          Contraseña
+        </label>
+
+
+        <input type="password" id="pass1" placeholder="Ingrese su contraseña">
+
+        <small class="ayuda-password">
+
+          Debe tener mínimo 8 caracteres,
+          una mayúscula y un carácter especial.
+
+        </small>
+
+        <label>
+          Confirmar Contraseña
+        </label>
+        <input type="password" id="pass2" placeholder="Confirme su contraseña">
+        <button type="submit">
+
+          REGISTRARSE
+
+        </button>
+
+
+
+
+        <div id="mensaje"></div>
+
+
+
+      </form>
+
+
+
+    </div>
+
+
+  </section>
+
+  <section class="tabla-registros">
+
+
+    <h2>
+      Clientes registrados
+    </h2>
+
+
+
+
+    <table>
+
+
+
+      <thead>
+
+
+        <tr>
+
+          <th>
+            Nombre
+          </th>
+
+
+          <th>
+            Correo
+          </th>
+
+
+        </tr>
+
+
+
+      </thead>
+
+
+
+
+
+      <tbody id="tablaUsuarios">
+
+
+      </tbody>
+
+
+
+    </table>
+
+  </section>
+
+  <section class="beneficios">
+    <div class="beneficio">
+
+
+      <h3>
+        Promociones Exclusivas
+      </h3>
+
+
+      <p>
+        Accede a descuentos especiales para clientes registrados.
+      </p>
+
+
+    </div>
+
+    <div class="beneficio">
+
+
+      <h3>
+        Noticias y Eventos
+      </h3>
+
+
+      <p>
+        Mantente informado sobre nuestras novedades.
+      </p>
+
+
+    </div>
+
+    <div class="beneficio">
+
+
+      <h3>
+        Experiencia Premium
+      </h3>
+
+
+      <p>
+        Vive una experiencia gastronómica única.
+      </p>
+
+
+    </div>
+
+
+  </section>
+
+  <div id="miModal" class="modal">
+
+    <div class="modal-content">
+
+      <h3>
+        Registro Exitoso
+      </h3>
+
+
+
+
+      <p id="textoModal">
+
+      </p>
+
+
+
+
+      <button onclick="cerrarModal()">
+
+        Aceptar
+
+      </button>
+
+
+
+
+    </div>
+
+
+  </div>
+
+
+  <footer class="footer">
+
+
+    <div class="footer-container">
+
+
+
+      <div class="footer-box">
+
+
+        <i class="fa-solid fa-location-dot"></i>
+
+
+
+        <p>
+
+          Av. Los Sabores 123, Lima - Perú
+
+          <br>
+
+          Frente al mar, Miraflores
+
+        </p>
+
+
+
+      </div>
+
+
+      <div class="footer-box">
+
+
+        <i class="fa-solid fa-phone"></i>
+
+
+
+        <p>
+
+          +51 956 266 206
+
+          <br>
+
+          +51 928 068 406
+
+        </p>
+
+
+
+      </div>
+
+      <div class="footer-box">
+
+
+        <i class="fa-regular fa-envelope"></i>
+
+        <p>
+
+          info@tenedoryplata.com
+
+          <br>
+
+          contacto@tenedoryplata.com
+
+        </p>
+
+      </div>
+
+      <div class="footer-box">
+
+
+        <i class="fa-regular fa-clock"></i>
+
+        <p>
+
+          Lun - Dom: 11:00 a.m. - 11:00 p.m.
+
+          <br>
+
+          Atención todos los días
+
+        </p>
+
+      </div>
+    </div>
+
+    <div class="social">
+
+
+      <i class="fa-brands fa-facebook-f"></i>
+
+
+      <i class="fa-brands fa-instagram"></i>
+
+
+      <i class="fa-brands fa-tiktok"></i>
+
+
+
+    </div>
+    <p class="copy">
+
+
+      © 2026 Tenedor y Plata - Todos los derechos reservados.
+
+
+    </p>
+
+  </footer>
+
+  <script>
+
+
+    let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+
+    function registrar(event) {
+
+
+      event.preventDefault();
+
+
+
+      let nombre =
+        document.getElementById("nombre").value.trim();
+
+
+
+      let correo =
+        document.getElementById("correo").value.trim();
+
+
+
+      let pass1 =
+        document.getElementById("pass1").value;
+
+
+
+      let pass2 =
+        document.getElementById("pass2").value;
+
+
+
+
+
+      // VALIDACIÓN CAMPOS VACÍOS
+
+
+      if (nombre === "" ||
+        correo === "" ||
+        pass1 === "" ||
+        pass2 === "") {
+
+
+        alert("Por favor complete todos los campos");
+
+        return;
+
+      }
+
+      // VALIDAR CONTRASEÑAS
+
+
+      if (pass1 !== pass2) {
+
+
+        alert("Las contraseñas no coinciden");
+
+        return;
+
+      }
+
+      // VALIDAR LONGITUD
+
+
+      if (pass1.length < 8) {
+
+
+        alert(
+          "La contraseña debe tener mínimo 8 caracteres"
+        );
+
+
+        return;
+
+      }
+      // VALIDAR MAYÚSCULA
+
+      if (!/[A-Z]/.test(pass1)) {
+
+        alert(
+          "La contraseña debe contener una letra mayúscula"
+        );
+
+
+        return;
+
+      }
+      // VALIDAR CARÁCTER ESPECIAL
+
+      if (!/[!@#$%^&*(),.?":{}|<>]/.test(pass1)) {
+
+
+        alert(
+          "La contraseña debe contener un carácter especial"
+        );
+
+
+        return;
+
+      }
+      // CREAR OBJETO USUARIO
+
+      let nuevoUsuario = {
+        nombre: nombre,
+        correo: correo
+      };
+
+
+      guardarEnStorage(nuevoUsuario);
+
+      document.getElementById("mensaje").innerHTML = `
+
+
+    <h3>
+    Bienvenido ${nombre}
+    </h3>
+
+
+    `;
+
+      document.getElementById("textoModal").innerHTML = `
+
+
+    Gracias <strong>${nombre}</strong> 
+    por registrarte en Tenedor y Plata.
+
+
+    `;
+
+
+      abrirModal();
+
+
+      mostrarUsuarios();
+      document.querySelector(".formulario").reset();
+
+
+    }
+
+    function guardarEnStorage(usuario) {
+
+
+
+      usuarios.push(usuario);
+
+
+
+      localStorage.setItem(
+
+        "usuarios",
+
+        JSON.stringify(usuarios)
+
+      );
+
+
+    }
+
+
+    function mostrarUsuarios() {
+
+
+
+      let tabla =
+        document.getElementById("tablaUsuarios");
+
+
+
+      tabla.innerHTML = "";
+      usuarios.forEach(function (usuario) {
+
+
+
+        tabla.innerHTML += `
+
+
+        <tr>
+
+
+        <td>
+
+        ${usuario.nombre}
+
+        </td>
+
+
+
+        <td>
+
+        ${usuario.correo}
+
+        </td>
+
+
+        </tr>
+
+
+        `;
+
+
+
+      });
+
+
+
+    }
+
+    function abrirModal() {
+      document.getElementById("miModal")
+        .style.display = "flex";
+
+
+
+    }
+
+    function cerrarModal() {
+      document.getElementById("miModal")
+        .style.display = "none";
+    }
+
+    window.onload = function () {
+
+      mostrarUsuarios();
+    };
+  </script>
+</body>
+
+</html>

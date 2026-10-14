@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenedor y Plata</title>
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+            <img src="../IMAGENES/LOGO.jpg" alt="Logo Tenedor y Plata">
+
+            <div>
+                <h2>TENEDOR Y PLATA</h2>
+                <span>La sazón de Orfe</span>
+            </div>
+        </div>
+
+<input type="checkbox" id="menu-toggle">
+
+<label for="menu-toggle" class="menu-icon">
+☰
+</label>
+
+        <nav class="navbar">
+
+<div class="menu-title">
+INICIO
+</div>
+
+<a href="../MENU/index.html">
+<i class="fa-solid fa-utensils"></i>
+MENU
+</a>
+
+<a href="../SERVICIOS/index.html">
+<i class="fa-solid fa-bell-concierge"></i>
+SERVICIOS
+</a>
+
+<a href="../PROMOCIONES/index.html">
+<i class="fa-solid fa-tags"></i>
+PROMOCIONES
+</a>
+
+<a href="../CARTA/index.html">
+<i class="fa-solid fa-book-open"></i>
+CARTA
+</a>
+
+<a href="../RESERVAS/index.html">
+<i class="fa-solid fa-calendar-days"></i>
+RESERVAS
+</a>
+
+<a href="../NOTICIAS/index.html">
+<i class="fa-solid fa-newspaper"></i>
+NOTICIAS
+</a>
+
+<a href="../CONTACTANOS/index.html">
+<i class="fa-solid fa-envelope"></i>
+CONTACTO
+</a>
+
+<a href="../REGISTRATE/index.html">
+<i class="fa-solid fa-user"></i>
+REGISTRATE
+</a>
+
+</nav>
+
+        <a href="#" class="btn-registro">
+            <i class="fa-regular fa-user"></i> REGISTRATE
+        </a>
+
+    </header>
+
+    <section class="hero">
+
+        <div class="overlay"></div>
+
+        <div class="hero-texto">
+
+            <h2>PONTE EN</h2>
+
+            <h1>Contacto</h1>
+
+            <p>
+                Estamos listos para atenderte y resolver tus dudas.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="contacto">
+
+        <div class="contenedor-contacto">
+
+            <div class="info">
+
+                <h2>Información</h2>
+
+                <p>
+                    Puedes comunicarte con nosotros a través
+                    de los siguientes medios.
+                </p>
+
+                <div class="dato">
+
+                    <h3>📍 Dirección</h3>
+
+                    <p>Av. Los Sabores 123, Lima - Perú</p>
+
+                    <iframe
+                        src="https://www.google.com/maps?q=Av.+Los+Sabores+123,+Lima,+Perú&output=embed"
+                        width="100%"
+                        height="300"
+                        style="border:0; border-radius:10px;"
+                        allowfullscreen=""
+                        loading="lazy">
+                    </iframe>
+
+                </div>
+
+                <div class="dato">
+
+                    <h3>📞 Teléfono</h3>
+
+                    <p>956 266 206</p>
+                    <p>928 068 406</p>
+
+                </div>
+
+                <div class="dato">
+
+                    <h3>✉️ Correo</h3>
+
+                    <p>info@tenedoryplata.com</p>
+
+                    <p>contacto@tenedoryplata.com</p>
+
+                </div>
+
+                <div class="dato">
+
+                    <h3>🕒 Horario</h3>
+
+                    <p>
+                        Lunes : 9am a 11pm
+                        <br>
+                        Martes : 9am a 11pm
+                        <br>
+                        Miércoles : 9am a 11pm
+                        <br>
+                        Jueves : 9am a 11pm
+                        <br>
+                        Viernes : 9am a 11pm
+                        <br>
+                        Sábado : 9am a 11pm
+                        <br>
+                        Domingo : 9am a 11pm
+                    </p>
+
+                </div>
+
+            </div>
+
+            <form class="formulario" onsubmit="enviarMensaje(event)">
+
+                <h2>Envíanos un Mensaje</h2>
+
+                <label>Nombre</label>
+
+                <input
+                    type="text"
+                    id="nombre"
+                    placeholder="Ingrese su nombre">
+
+                <label>Correo</label>
+
+                <input
+                    type="email"
+                    id="correo"
+                    placeholder="Ingrese su correo"
+                    onchange="validarCorreo()">
+
+                <small id="estadoCorreo"></small>
+
+                <label>Asunto</label>
+
+                <input
+                    type="text"
+                    id="asunto"
+                    placeholder="Ingrese el asunto">
+
+                <label>Mensaje</label>
+
+                <textarea
+                    id="mensaje"
+                    placeholder="Escriba su mensaje"></textarea>
+
+                <button type="submit">
+                    ENVIAR MENSAJE
+                </button>
+
+                <div id="resultado"></div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- MODAL -->
+
+    <div id="miModal" class="modal">
+
+        <div class="modal-content">
+
+            <h3>Mensaje Enviado</h3>
+
+            <p>
+                Gracias por contactarte con Tenedor y Plata.
+            </p>
+
+            <button onclick="cerrarModal()">
+                Aceptar
+            </button>
+
+        </div>
+
+    </div>
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-box">
+                <i class="fa-solid fa-location-dot"></i>
+
+                <p>
+                    Av. Los Sabores 123, Lima - Perú
+                    <br>
+                    Frente al mar, Miraflores
+                </p>
+            </div>
+
+            <div class="footer-box">
+                <i class="fa-solid fa-phone"></i>
+
+                <p>
+                    +51 956 266 206
+                    <br>
+                    +51 928 068 406
+                </p>
+            </div>
+
+            <div class="footer-box">
+                <i class="fa-regular fa-envelope"></i>
+
+                <p>
+                    info@tenedoryplata.com
+                    <br>
+                    contacto@tenedoryplata.com
+                </p>
+            </div>
+
+            <div class="footer-box">
+                <i class="fa-regular fa-clock"></i>
+
+                <p>
+                    Lun - Dom: 11:00 a.m. - 11:00 p.m.
+                    <br>
+                    Atención todos los días
+                </p>
+            </div>
+
+        </div>
+
+        <div class="social">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-tiktok"></i>
+        </div>
+
+        <p class="copy">
+            © 2026 Tenedor y Plata - Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+    <script>
+
+        function validarCorreo() {
+
+            let correo =
+                document.getElementById("correo").value;
+
+            let estado =
+                document.getElementById("estadoCorreo");
+
+            if (correo.includes("@")) {
+
+                estado.innerHTML =
+                    "✓ Correo válido";
+
+                estado.style.color = "green";
+
+            } else {
+
+                estado.innerHTML =
+                    "✗ Correo inválido";
+
+                estado.style.color = "red";
+
+            }
+
+        }
+
+        function enviarMensaje(event) {
+
+            event.preventDefault();
+
+            let nombre =
+                document.getElementById("nombre").value;
+
+            let correo =
+                document.getElementById("correo").value;
+
+            let asunto =
+                document.getElementById("asunto").value;
+
+            let mensaje =
+                document.getElementById("mensaje").value;
+
+            if (
+                nombre === "" ||
+                correo === "" ||
+                asunto === "" ||
+                mensaje === ""
+            ) {
+
+                alert("Complete todos los campos");
+                return;
+            }
+
+            document.getElementById("resultado").innerHTML =
+                "<h3>Gracias " + nombre +
+                ", recibimos tu mensaje.</h3>";
+
+            abrirModal();
+
+        }
+
+        function abrirModal() {
+
+            document.getElementById("miModal").style.display =
+                "flex";
+
+        }
+
+        function cerrarModal() {
+
+            document.getElementById("miModal").style.display =
+                "none";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

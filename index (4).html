@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenedor y Plata</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<div id="modal" class="modal">
+
+    <div class="modal-contenido">
+
+        <span class="cerrar" onclick="cerrarModal()">
+            &times;
+        </span>
+
+        <h2>Reserva tu mesa</h2>
+
+        <form onsubmit="validarFormulario(event)">
+
+            <input 
+            type="text" 
+            id="nombre"
+            placeholder="Nombre completo">
+
+
+            <input 
+            type="email" 
+            id="correo"
+            placeholder="Correo">
+
+
+            <select id="personas" onchange="cambiarMensaje()">
+
+                <option value="">
+                    Número de personas
+                </option>
+
+                <option>
+                    2 personas
+                </option>
+
+                <option>
+                    4 personas
+                </option>
+
+                <option>
+                    6 personas
+                </option>
+
+            </select>
+
+
+            <p id="mensaje">
+                
+            </p>
+
+
+            <button type="submit">
+                Reservar
+            </button>
+
+
+        </form>
+
+    </div>
+
+</div>
+
+<div id="loginModal" class="login-modal">
+
+    <div class="login-box">
+
+        <span class="cerrar-login" onclick="cerrarLogin()">&times;</span>
+
+        <div class="login-logo">
+            <i class="fa-solid fa-utensils"></i>
+        </div>
+
+        <h2>Tenedor y Plata</h2>
+
+        <p>Inicia sesión para continuar</p>
+
+        <form onsubmit="login(event)">
+
+            <div class="input-box">
+                <i class="fa-solid fa-envelope"></i>
+                <input type="email" id="usuario" placeholder="Correo electrónico">
+            </div>
+
+            <div class="input-box">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="clave" placeholder="Contraseña">
+            </div>
+
+            <div class="opciones">
+                <label>
+                    <input type="checkbox">
+                    Recordarme
+                </label>
+
+                <a href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+
+            <button type="submit" class="btn-login2">
+                Ingresar
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+
+function abrirModal(){
+
+    document.getElementById("modal")
+    .style.display="flex";
+
+}
+
+function cerrarModal(){
+
+    document.getElementById("modal")
+    .style.display="none";
+}
+
+function validarFormulario(event){
+
+    event.preventDefault();
+
+
+    let nombre =
+    document.getElementById("nombre").value;
+
+
+    let correo =
+    document.getElementById("correo").value;
+
+
+
+    if(nombre=="" || correo==""){
+
+
+        alert(
+        "Complete todos los campos"
+        );
+
+        return;
+
+    }
+
+
+    alert(
+    "Reserva realizada correctamente para: "
+    + nombre
+    );
+
+
+    cerrarModal();
+
+
+}
+
+function cambiarMensaje(){
+
+
+let valor =
+document.getElementById("personas").value;
+
+
+
+document.getElementById("mensaje")
+.innerHTML =
+"Seleccionaste: " + valor;
+
+
+}
+
+
+let tarjetas =
+document.querySelectorAll(".card");
+
+
+tarjetas.forEach(function(card){
+
+
+card.onmouseover=function(){
+
+    card.style.cursor="pointer";
+
+}
+
+
+
+});
+
+
+
+let titulo =
+document.querySelector(".titulo");
+
+
+titulo.onclick=function(){
+
+
+titulo.innerHTML =
+"🍽 MENÚ ESPECIAL DE LA CASA";
+ 
+
+titulo.style.color="#d4a437";
+
+
+}
+
+
+</script>
+<body>
+
+    <header class="header">
+
+        <div class="logo">
+        <img src="../IMAGENES/LOGO.jpg" alt="Logo Tenedor y Plata">
+        <div>
+        <h2>TENEDOR Y PLATA</h2>
+        <span>La sazón de Orfe</span>
+    </div>
+</div>
+
+<input type="checkbox" id="menu-toggle">
+<label for="menu-toggle" class="menu-icon">&#9776</label>
+
+<nav class="navbar">
+
+<div class="menu-title">
+INICIO
+</div>
+
+<a href="../MENU/index.html">
+<i class="fa-solid fa-utensils"></i>
+MENU
+</a>
+
+<a href="../SERVICIOS/index.html">
+<i class="fa-solid fa-bell-concierge"></i>
+SERVICIOS
+</a>
+
+<a href="../PROMOCIONES/index.html">
+<i class="fa-solid fa-tags"></i>
+PROMOCIONES
+</a>
+
+<a href="../CARTA/index.html">
+<i class="fa-solid fa-book-open"></i>
+CARTA
+</a>
+
+<a href="../RESERVAS/index.html">
+<i class="fa-solid fa-calendar-days"></i>
+RESERVAS
+</a>
+
+<a href="../NOTICIAS/index.html">
+<i class="fa-solid fa-newspaper"></i>
+NOTICIAS
+</a>
+
+<a href="../CONTACTANOS/index.html">
+<i class="fa-solid fa-envelope"></i>
+CONTACTO
+</a>
+
+<a href="../REGISTRATE/index.html">
+<i class="fa-solid fa-user"></i>
+REGISTRATE
+</a>
+
+</nav>
+
+       <button class="btn-login" onclick="abrirLogin()">
+    <i class="fa-solid fa-user-lock"></i>
+    INICIAR SESION
+</button>
+
+    </header>
+
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <p class="bienvenido">BIENVENIDO A</p>
+
+            <h1>TENEDOR Y PLATA</h1>
+
+            <h2>La sazón de Orfe</h2>
+
+            <p class="descripcion">
+                Disfruta de una experiencia única con los mejores
+                sabores preparados con amor y dedicación.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="../CARTA/index.html" class="btn btn-gold">
+                    <i class="fa-solid fa-utensils"></i>
+                    VER CARTA
+                </a>
+
+                <a href="../RESERVAS/index.html" class="btn btn-outline">
+                    <i class="fa-regular fa-calendar"></i>
+                    RESERVA AHORA
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+   
+    <section class="menu">
+
+        <h2 class="titulo">NUESTRO MENÚ</h2>
+
+        <div class="menu-grid">
+
+            <div class="card">
+                <img src="../IMAGENES/Resturante.jpg" alt="Entradas">
+
+                <div class="icon">
+                    <i class="fa-solid fa-fish"></i>
+                </div>
+
+                <h3>ENTRADAS</h3>
+
+                <p>Frescas y deliciosas para comenzar.</p>
+            </div>
+
+            <!-- CARD -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop" alt="Platos">
+
+                <div class="icon">
+                    <i class="fa-solid fa-bowl-food"></i>
+                </div>
+
+                <h3>PLATOS DE FONDO</h3>
+
+                <p>Sabores que conquistan tu paladar.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?q=80&w=1200&auto=format&fit=crop" alt="Especiales">
+
+                <div class="icon">
+                    <i class="fa-solid fa-shrimp"></i>
+                </div>
+
+                <h3>ESPECIALES</h3>
+
+                <p>Recetas únicas de la casa.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1200&auto=format&fit=crop" alt="Postres">
+
+                <div class="icon">
+                    <i class="fa-solid fa-cake-candles"></i>
+                </div>
+
+                <h3>POSTRES</h3>
+
+                <p>El toque dulce para finalizar.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?q=80&w=1200&auto=format&fit=crop" alt="Bebidas">
+
+                <div class="icon">
+                    <i class="fa-solid fa-glass-water"></i>
+                </div>
+
+                <h3>BEBIDAS</h3>
+
+                <p>Refrescantes y especiales para ti.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200&auto=format&fit=crop" alt="Cocteles">
+
+                <div class="icon">
+                    <i class="fa-solid fa-martini-glass"></i>
+                </div>
+
+                <h3>COCTELES</h3>
+
+                <p>El complemento perfecto.</p>
+            </div>
+
+        </div>
+
+        <div class="center">
+            <a href="../SERVICIOS/index.html" class="btn-ver">
+                VER SERVICIOS
+            </a>
+        </div>
+
+    </section>
+
+   
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div class="footer-box">
+                <i class="fa-solid fa-location-dot"></i>
+                <p>
+                    Av. Los Sabores 123, Lima - Perú
+                    <br>
+                    Frente al mar, Miraflores
+                </p>
+            </div>
+
+            <div class="footer-box">
+                <i class="fa-solid fa-phone"></i>
+                <p>
+                    +51 956 266 206
+                    <br>
+                    +51 928 068 406
+                </p>
+            </div>
+
+            <div class="footer-box">
+                <i class="fa-regular fa-envelope"></i>
+                <p>
+                    info@tenedoryplata.com
+                    <br>
+                    contacto@tenedoryplata.com
+                </p>
+            </div>
+
+            <div class="footer-box">
+                <i class="fa-regular fa-clock"></i>
+                <p>
+                    Lun - Dom: 11:00 a.m. - 11:00 p.m.
+                    <br>
+                    Atención todos los días
+                </p>
+            </div>
+
+        </div>
+
+        <div class="social">
+            <i class="fa-brands fa-facebook-f"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-tiktok"></i>
+        </div>
+
+        <p class="copy">
+            © 2026 Tenedor y Plata - Todos los derechos reservados.
+        </p>
+
+    </footer>
+
+    <script>
+
+function abrirLogin() {
+
+    document.getElementById("loginModal").style.display = "flex";
+
+}
+
+function cerrarLogin() {
+
+    document.getElementById("loginModal").style.display = "none";
+
+}
+
+function login(event) {
+
+    event.preventDefault();
+
+    let usuario = document.getElementById("usuario").value;
+    let clave = document.getElementById("clave").value;
+
+    if (usuario == "" || clave == "") {
+
+        alert("Complete todos los campos.");
+        return;
+
+    }
+
+    
+    if (usuario == "admin@hotmail.com" && clave == "123456") {
+
+        alert("¡Bienvenido a Tenedor y Plata!");
+
+        cerrarLogin();
+
+        document.getElementById("usuario").value = "";
+        document.getElementById("clave").value = "";
+
+    } else {
+
+        alert("Correo o contraseña incorrectos.");
+
+    }
+
+}
+
+
+window.onclick = function(event) {
+
+    let modal = document.getElementById("loginModal");
+
+    if (event.target == modal) {
+
+        cerrarLogin();
+
+    }
+
+}
+
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        cerrarLogin();
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
